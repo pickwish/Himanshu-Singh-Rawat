@@ -1,233 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himanshu Singh Rawat | Digital Marketing & Growth Specialist</title>
+    <title>Himanshu Singh Rawat | Digital Marketer & Growth Strategist</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Google Sans / Roboto style -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        google: ['Roboto', 'sans-serif']
-                    },
                     colors: {
-                        google: {
-                            blue: '#1A73E8',
-                            red: '#EA4335',
-                            yellow: '#FBBC04',
-                            green: '#34A853',
-                            gray: '#F8F9FA',
-                            border: '#DADCE0',
-                            darkText: '#202124',
-                            subText: '#5F6368'
-                        }
+                        gBlue: '#1A73E8',
+                        gBlueHover: '#1557B0',
+                        gRed: '#EA4335',
+                        gYellow: '#FBBC04',
+                        gGreen: '#34A853',
+                        gBg: '#FFFFFF',
+                        gSubtleBg: '#F8F9FA',
+                        gBorder: '#DADCE0',
+                        gTextPrimary: '#202124',
+                        gTextSecondary: '#5F6368',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'g-sm': '0 1px 3px rgba(60,64,67,0.12), 0 1px 2px rgba(60,64,67,0.08)',
+                        'g-md': '0 1px 6px rgba(32,33,36,0.1), 0 4px 16px rgba(32,33,36,0.08)',
+                        'g-lg': '0 4px 20px rgba(32,33,36,0.12), 0 8px 30px rgba(32,33,36,0.08)',
                     }
                 }
             }
         }
     </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background-color: #FFFFFF;
+            color: #202124;
+            overflow-x: hidden;
+        }
+
         .g-card {
-            background: #ffffff;
+            background-color: #FFFFFF;
             border: 1px solid #DADCE0;
-            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.1), 0 1px 3px 1px rgba(60,64,67,0.05);
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 20px;
+            box-shadow: 0 1px 3px rgba(60,64,67,0.08), 0 1px 2px rgba(60,64,67,0.05);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .g-card:hover {
-            box-shadow: 0 4px 12px 0 rgba(60,64,67,0.15), 0 1px 3px 1px rgba(60,64,67,0.1);
-            border-color: #BDC1C6;
+            box-shadow: 0 4px 18px rgba(32,33,36,0.12), 0 2px 6px rgba(32,33,36,0.06);
+            border-color: #BEC1C5;
+            transform: translateY(-2px);
         }
+
         .g-pill {
+            background-color: #F8F9FA;
             border: 1px solid #DADCE0;
             transition: all 0.2s ease;
         }
         .g-pill:hover {
             background-color: #F1F3F4;
-            border-color: #1A73E8;
-            color: #1A73E8;
+            border-color: #BDC1C6;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFFFFF;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DADCE0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #BDC1C6;
+        }
+
+        #bg-dots {
+            background-image: radial-gradient(#E8EAED 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
-<body class="bg-[#FFFFFF] text-google-darkText font-sans antialiased selection:bg-google-blue selection:text-white">
+<body class="relative antialiased selection:bg-gBlue/20 selection:text-gBlue">
+
+    <!-- Subtle Background Pattern -->
+    <div id="bg-dots" class="fixed inset-0 pointer-events-none z-0 opacity-60"></div>
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-google-border">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="w-9 h-9 rounded-full bg-google-blue text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
-                    H
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Google Styled Logo Signature -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="flex items-center gap-0.5 font-extrabold text-2xl tracking-tight">
+                    <span class="text-gBlue">H</span>
+                    <span class="text-gRed">i</span>
+                    <span class="text-gYellow">m</span>
+                    <span class="text-gBlue">a</span>
+                    <span class="text-gGreen">n</span>
+                    <span class="text-gRed">s</span>
+                    <span class="text-gBlue">h</span>
+                    <span class="text-gGreen">u</span>
                 </div>
-                <div>
-                    <span class="font-bold text-lg tracking-tight block text-google-darkText">Himanshu Singh Rawat</span>
-                    <span class="text-xs text-google-subText -mt-1 block font-medium">Udified Certified Marketer</span>
+                <div class="hidden sm:flex items-center gap-1.5 pl-2.5 border-l border-gBorder text-xs font-semibold text-gTextSecondary">
+                    <span>Digital Marketer</span>
+                    <span class="flex gap-1 ml-1">
+                        <span class="w-2 h-2 rounded-full bg-gBlue"></span>
+                        <span class="w-2 h-2 rounded-full bg-gRed"></span>
+                        <span class="w-2 h-2 rounded-full bg-gYellow"></span>
+                        <span class="w-2 h-2 rounded-full bg-gGreen"></span>
+                    </span>
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-google-subText">
-                <a href="#about" class="hover:text-google-blue transition-colors">About</a>
-                <a href="#services" class="hover:text-google-blue transition-colors">Services</a>
-                <a href="#experience" class="hover:text-google-blue transition-colors">Experience</a>
-                <a href="#skills" class="hover:text-google-blue transition-colors">Skills</a>
-                <a href="#contact" class="hover:text-google-blue transition-colors">Contact</a>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-1 bg-gSubtleBg border border-gBorder rounded-full p-1.5 shadow-inner">
+                <a href="#about" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">About</a>
+                <a href="#skills" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextSecondary hover:text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">Skills</a>
+                <a href="#experience" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextSecondary hover:text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">Experience</a>
+                <a href="#services" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextSecondary hover:text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">Services</a>
+                <a href="#contact" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextSecondary hover:text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">Contact</a>
             </nav>
 
-            <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2 rounded-full bg-google-blue text-white font-medium text-sm hover:bg-blue-600 transition-all shadow-sm hover:shadow">
-                <span>Hire Me</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
+            <!-- Action Button -->
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-gBlue hover:bg-gBlueHover text-white text-xs font-bold transition-all shadow-g-sm hover:shadow-g-md flex items-center gap-2">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Let's Connect</span>
+                </a>
+                
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-full bg-gSubtleBg text-gTextPrimary border border-gBorder">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-gBorder px-6 py-4 flex flex-col gap-3">
+            <a href="#about" class="mobile-item py-2 text-sm font-medium text-gTextPrimary">About</a>
+            <a href="#skills" class="mobile-item py-2 text-sm font-medium text-gTextPrimary">Skills & Tech</a>
+            <a href="#experience" class="mobile-item py-2 text-sm font-medium text-gTextPrimary">Work Experience</a>
+            <a href="#services" class="mobile-item py-2 text-sm font-medium text-gTextPrimary">Services Offered</a>
+            <a href="#contact" class="mobile-item py-2 text-sm font-bold text-gBlue">Get In Touch</a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-6 pt-12 pb-24 space-y-20">
+    <main class="relative z-10">
 
         <!-- Hero Section -->
-        <section class="grid lg:grid-cols-12 gap-12 items-center pt-6">
-            <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-google-blue text-xs font-semibold">
-                    <span class="w-2 h-2 rounded-full bg-google-green animate-pulse"></span>
-                    Digital Marketing Mastery (Udified Skill 2026 Batch)
-                </div>
-                
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                    Data-Driven <span class="text-google-blue">Digital Marketing</span> & Brand Growth.
-                </h1>
+        <section id="about" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+            
+            <!-- Udified Skill Certification Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full g-pill text-xs font-medium text-gTextSecondary mb-8 shadow-sm">
+                <i data-lucide="award" class="w-4 h-4 text-gBlue"></i>
+                <span class="font-semibold text-gTextPrimary">Udified Skill Certified (Digital Marketing Mastery, 2026)</span>
+            </div>
 
-                <p class="text-lg text-google-subText leading-relaxed">
-                    Hi, I'm <strong class="text-google-darkText font-semibold">Himanshu Singh Rawat</strong>. I help brands grow organic visibility, design high-converting web experiences, manage targeted multi-channel ad campaigns, and execute full-funnel digital marketing.
-                </p>
+            <!-- Title -->
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-gTextPrimary tracking-tight leading-[1.15]">
+                Himanshu Singh Rawat
+            </h1>
+            <p class="mt-4 text-lg sm:text-2xl text-gTextSecondary font-normal max-w-3xl mx-auto">
+                Digital Marketer & Growth Specialist driving organic traffic, web experiences, and multi-channel marketing strategies.
+            </p>
 
-                <!-- Core Expertise Chips -->
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1 bg-google-gray rounded-full text-xs font-medium border border-google-border text-google-subText">SEO (On/Off/Technical/Local)</span>
-                    <span class="px-3 py-1 bg-google-gray rounded-full text-xs font-medium border border-google-border text-google-subText">Social Media Ads</span>
-                    <span class="px-3 py-1 bg-google-gray rounded-full text-xs font-medium border border-google-border text-google-subText">Website Designing</span>
-                    <span class="px-3 py-1 bg-google-gray rounded-full text-xs font-medium border border-google-border text-google-subText">Email Marketing</span>
-                </div>
-
-                <div class="flex flex-wrap items-center gap-4 pt-4">
-                    <a href="#contact" class="px-7 py-3 rounded-full bg-google-blue text-white font-semibold text-sm hover:bg-blue-600 transition-all shadow hover:shadow-md flex items-center gap-2">
-                        <span>Get In Touch</span>
-                        <i data-lucide="message-square" class="w-4 h-4"></i>
-                    </a>
-                    <a href="#experience" class="px-7 py-3 rounded-full bg-white text-google-darkText font-semibold text-sm border border-google-border hover:bg-google-gray transition-all">
-                        View Work Experience
+            <!-- Google Search Bar Mockup -->
+            <div class="mt-10 max-w-2xl mx-auto relative">
+                <div class="bg-white border border-gBorder rounded-full p-2.5 pl-6 flex items-center gap-3 shadow-g-md hover:shadow-g-lg transition-all">
+                    <i data-lucide="search" class="w-5 h-5 text-gBlue"></i>
+                    <span class="w-full text-left text-gTextPrimary text-sm font-medium truncate">
+                        Himanshu Singh Rawat — Website Design, Full-Stack SEO, Social Media & Email Strategy
+                    </span>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-gBlue text-white font-semibold text-xs transition-all flex items-center gap-1.5 flex-shrink-0">
+                        <span>Contact</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Profile Summary Card -->
-            <div class="lg:col-span-5">
-                <div class="g-card rounded-2xl p-6 space-y-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-500 to-indigo-600 text-white font-bold text-2xl flex items-center justify-center shadow-inner">
-                            HSR
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg text-google-darkText">Himanshu Singh Rawat</h3>
-                            <p class="text-sm text-google-subText">Digital Growth Specialist</p>
-                            <div class="flex items-center gap-1.5 text-xs text-google-green font-semibold mt-1">
-                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
-                                Udified Skill Certified (2026)
+            <!-- Core Skill Badges -->
+            <div class="flex flex-wrap justify-center gap-2.5 mt-10 max-w-3xl mx-auto">
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="globe" class="w-3.5 h-3.5 text-gBlue"></i> Website Designing
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="search" class="w-3.5 h-3.5 text-gGreen"></i> Full-Stack SEO (On/Off Page, Local, Tech)
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="share-2" class="w-3.5 h-3.5 text-gRed"></i> Multi-Channel Social Marketing
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-gYellow"></i> Email Marketing
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="edit-3" class="w-3.5 h-3.5 text-gBlue"></i> Blog Writing & Copywriting
+                </span>
+            </div>
+        </section>
+
+        <!-- Certification & Overview Section -->
+        <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="g-card p-8 sm:p-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gBlue">Background & Training</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-gTextPrimary mt-1">Certified Digital Marketing Practitioner</h2>
+                        <p class="text-xs sm:text-sm text-gTextSecondary leading-relaxed mt-4">
+                            Trained in **Digital Marketing Mastery** at **Udified Skill (2026)**, Himanshu brings a hands-on technical approach to modern online marketing. From crafting responsive websites to executing end-to-end SEO audits, managing corporate social channels, and publishing high-intent blog content, he focuses on clear organic reach and brand growth.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 bg-gSubtleBg border border-gBorder rounded-2xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-gBlue/10 flex items-center justify-center text-gBlue">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-gTextPrimary">Udified Skill</div>
+                                <div class="text-[11px] text-gTextSecondary">Digital Marketing Mastery (2026)</div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="border-t border-google-border pt-4 space-y-3">
-                        <div class="flex items-center justify-between text-sm">
-                            <span class="text-google-subText">Specialization</span>
-                            <span class="font-semibold text-google-darkText">Full-Funnel Marketing</span>
-                        </div>
-                        <div class="flex items-center justify-between text-sm">
-                            <span class="text-google-subText">Recent Client Experience</span>
-                            <span class="font-semibold text-google-darkText">Fostechno Process</span>
-                        </div>
-                        <div class="flex items-center justify-between text-sm">
-                            <span class="text-google-subText">Platforms Managed</span>
-                            <span class="font-semibold text-google-darkText">Meta, LinkedIn, Google</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-blue-50/70 border border-blue-100 rounded-xl p-4 flex items-center gap-3">
-                        <i data-lucide="award" class="w-8 h-8 text-google-blue shrink-0"></i>
-                        <p class="text-xs text-google-subText">
-                            Certified in modern organic SEO, website layout optimization, content marketing, and paid campaign management.
-                        </p>
+                        <ul class="space-y-2 text-xs text-gTextSecondary">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-gGreen"></i> Website Development & Design</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-gGreen"></i> Technical & Local SEO Optimization</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-gGreen"></i> Social Media & Content Strategy</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Work Experience Section -->
-        <section id="experience" class="space-y-6 pt-6">
-            <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-google-blue">Hands-on Experience</span>
-                <h2 class="text-3xl font-bold tracking-tight text-google-darkText">Industry Experience</h2>
+        <section id="experience" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-gGreen">Work History</span>
+                <h2 class="text-3xl font-extrabold text-gTextPrimary mt-1">Professional Experience</h2>
             </div>
 
-            <div class="g-card rounded-2xl p-8">
-                <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 pb-6 border-b border-google-border">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-google-gray border border-google-border flex items-center justify-center font-bold text-google-blue text-xl">
-                            F
+            <div class="g-card p-8 sm:p-12 relative overflow-hidden">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-gBorder">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-gGreen"></span>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-gTextPrimary">Fostechno Process & Engineering Private Limited</h3>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-google-darkText">Fostechno Process & Engineering Private Limited</h3>
-                            <p class="text-sm font-semibold text-google-blue">Digital Marketing Specialist & SEO Lead</p>
-                        </div>
+                        <p class="text-xs font-semibold text-gBlue mt-1">Digital Marketing Specialist / Growth Executive</p>
                     </div>
-                    <div class="px-4 py-1.5 bg-google-gray rounded-full border border-google-border text-xs font-semibold text-google-subText self-start md:self-auto">
-                        Industrial Engineering Domain
-                    </div>
+                    <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextSecondary">
+                        2026 — Present
+                    </span>
                 </div>
 
-                <div class="pt-6 grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-bold text-sm text-google-darkText mb-3 flex items-center gap-2">
-                            <i data-lucide="layers" class="w-4 h-4 text-google-blue"></i>
-                            Key Responsibilities & Deliverables
-                        </h4>
-                        <ul class="space-y-2 text-sm text-google-subText">
-                            <li class="flex items-start gap-2">
-                                <span class="text-google-blue font-bold">•</span>
-                                <span><strong>Website Designing & Optimization:</strong> Structure and design for company web touchpoints.</span>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-gTextSecondary">Core Responsibilities & Highlights</h4>
+                        <ul class="space-y-3 text-xs text-gTextSecondary">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gBlue flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Website Designing:</strong> Structured, designed, and updated responsive web pages tailored for seamless user navigation.</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-google-blue font-bold">•</span>
-                                <span><strong>Comprehensive SEO:</strong> Technical SEO, On-Page content, Off-Page link building, and Local SEO.</span>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gGreen flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">360° SEO Execution:</strong> Managed Technical SEO, On-Page keyword placement, Off-Page backlink strategy, and Google Local SEO listing optimization.</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-google-blue font-bold">•</span>
-                                <span><strong>Email Marketing:</strong> Lead nurturing campaigns and promotional email setup.</span>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gYellow flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Social Media Management:</strong> Maintained and scaled social brand presence across LinkedIn, Instagram, Facebook, and Twitter (X).</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div>
-                        <h4 class="font-bold text-sm text-google-darkText mb-3 flex items-center gap-2">
-                            <i data-lucide="share-2" class="w-4 h-4 text-google-blue"></i>
-                            Social Channels & Content Strategy
-                        </h4>
-                        <ul class="space-y-2 text-sm text-google-subText">
-                            <li class="flex items-start gap-2">
-                                <span class="text-google-green font-bold">•</span>
-                                <span><strong>Social Media Management:</strong> Growth on LinkedIn, Instagram, Facebook, and Twitter.</span>
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-gTextSecondary">Marketing & Content Operations</h4>
+                        <ul class="space-y-3 text-xs text-gTextSecondary">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gRed flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Email Marketing:</strong> Designed and broadcasted targeted email communication campaigns to improve engagement.</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-google-green font-bold">•</span>
-                                <span><strong>Blog Writing & Content:</strong> High-intent B2B blog posts for industrial services.</span>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gBlue flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Blog Writing:</strong> Authored informative blogs to strengthen domain authority and target audience reach.</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-google-green font-bold">•</span>
-                                <span><strong>Creative Support:</strong> Basic graphic designing and video editing for social creative posts.</span>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gGreen flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Creatives Production:</strong> Handled basic video editing and graphic designing to produce engaging banners and social posts.</span>
                             </li>
                         </ul>
                     </div>
@@ -235,172 +301,219 @@
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="space-y-8 pt-6">
-            <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-google-blue">What I Deliver</span>
-                <h2 class="text-3xl font-bold tracking-tight text-google-darkText">Core Services</h2>
+        <!-- Core Skills & Expertise Section -->
+        <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-gBlue">Skills Matrix</span>
+                <h2 class="text-3xl font-extrabold text-gTextPrimary mt-1">Core Competencies</h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Service 1 -->
-                <div class="g-card rounded-2xl p-6 space-y-4">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-google-blue flex items-center justify-center font-bold">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="g-card p-6">
+                    <div class="w-10 h-10 rounded-2xl bg-gGreen/10 flex items-center justify-center text-gGreen mb-4">
                         <i data-lucide="search" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="font-bold text-lg text-google-darkText">SEO & Organic Growth</h3>
-                    <p class="text-sm text-google-subText leading-relaxed">
-                        Complete SEO services including Technical SEO audits, On-Page keyword optimization, Off-Page strategy, and Google Local Business rankings.
-                    </p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="g-card rounded-2xl p-6 space-y-4">
-                    <div class="w-10 h-10 rounded-xl bg-green-50 text-google-green flex items-center justify-center font-bold">
-                        <i data-lucide="layout" class="w-5 h-5"></i>
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Search Engine Optimization (SEO)</h3>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Technical SEO</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">On-Page SEO</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Off-Page SEO</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Local SEO</span>
                     </div>
-                    <h3 class="font-bold text-lg text-google-darkText">Website Designing</h3>
-                    <p class="text-sm text-google-subText leading-relaxed">
-                        Modern, responsive website designs structured to convert traffic into leads with clean user experiences and mobile optimization.
-                    </p>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="g-card rounded-2xl p-6 space-y-4">
-                    <div class="w-10 h-10 rounded-xl bg-red-50 text-google-red flex items-center justify-center font-bold">
+                <!-- Skill Card 2 -->
+                <div class="g-card p-6">
+                    <div class="w-10 h-10 rounded-2xl bg-gBlue/10 flex items-center justify-center text-gBlue mb-4">
                         <i data-lucide="share-2" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="font-bold text-lg text-google-darkText">Social Media & Ads</h3>
-                    <p class="text-sm text-google-subText leading-relaxed">
-                        Strategic management across LinkedIn, Instagram, Facebook, and Twitter, paired with blog writing and creative designing.
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Social Media Management</h3>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">LinkedIn</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Instagram</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Facebook</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Twitter (X)</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="g-card p-6">
+                    <div class="w-10 h-10 rounded-2xl bg-gYellow/10 flex items-center justify-center text-gYellow mb-4">
+                        <i data-lucide="layout" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Website & Graphics Design</h3>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Website Designing</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Graphic Designing</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Video Editing</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="g-card p-6">
+                    <div class="w-10 h-10 rounded-2xl bg-gRed/10 flex items-center justify-center text-gRed mb-4">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Email Marketing & Copy</h3>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Email Campaigns</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Blog Writing</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">SEO Content</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div class="g-card p-6 md:col-span-2 lg:col-span-2">
+                    <div class="w-10 h-10 rounded-2xl bg-gBlue/10 flex items-center justify-center text-gBlue mb-4">
+                        <i data-lucide="check-square" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Technical Workflow</h3>
+                    <p class="text-xs text-gTextSecondary leading-relaxed">
+                        Combines technical SEO audits with user-friendly web page layouts, strategic social broadcasting, and email outreach to deliver consistent digital growth.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Grid -->
-        <section id="skills" class="space-y-6 pt-6">
-            <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-google-blue">Competencies</span>
-                <h2 class="text-3xl font-bold tracking-tight text-google-darkText">Skills & Toolkit</h2>
+        <!-- Services Offered Section -->
+        <section id="services" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-gRed">What I Do</span>
+                <h2 class="text-3xl font-extrabold text-gTextPrimary mt-1">Services & Solutions</h2>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="g-card rounded-xl p-4 flex items-center gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-google-blue"></i>
-                    <span class="font-semibold text-sm">Technical & On-Page SEO</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-gGreen/10 flex items-center justify-center text-gGreen mb-4">
+                            <i data-lucide="trending-up" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gTextPrimary mb-2">Complete SEO Solutions</h3>
+                        <p class="text-xs text-gTextSecondary leading-relaxed">On-page optimization, technical site audits, Google Local SEO, and quality link building.</p>
+                    </div>
                 </div>
-                <div class="g-card rounded-xl p-4 flex items-center gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-google-blue"></i>
-                    <span class="font-semibold text-sm">Off-Page & Local SEO</span>
+
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-gBlue/10 flex items-center justify-center text-gBlue mb-4">
+                            <i data-lucide="monitor" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gTextPrimary mb-2">Website Designing</h3>
+                        <p class="text-xs text-gTextSecondary leading-relaxed">Creating clean, structured, and user-friendly websites aligned with search engine standards.</p>
+                    </div>
                 </div>
-                <div class="g-card rounded-xl p-4 flex items-center gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-google-blue"></i>
-                    <span class="font-semibold text-sm">Website Designing</span>
+
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-gYellow/10 flex items-center justify-center text-gYellow mb-4">
+                            <i data-lucide="share-2" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gTextPrimary mb-2">Social Media Strategy</h3>
+                        <p class="text-xs text-gTextSecondary leading-relaxed">Managing organic presence on LinkedIn, Instagram, Facebook, and Twitter with engaging assets.</p>
+                    </div>
                 </div>
-                <div class="g-card rounded-xl p-4 flex items-center gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-google-blue"></i>
-                    <span class="font-semibold text-sm">Email Marketing</span>
-                </div>
-                <div class="g-card rounded-xl p-4 flex items-center gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-google-green"></i>
-                    <span class="font-semibold text-sm">LinkedIn & FB Marketing</span>
-                </div>
-                <div class="g-card rounded-xl p-4 flex items-center gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-google-green"></i>
-                    <span class="font-semibold text-sm">Instagram & Twitter Growth</span>
-                </div>
-                <div class="g-card rounded-xl p-4 flex items-center gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-google-yellow"></i>
-                    <span class="font-semibold text-sm">Blog & Content Writing</span>
-                </div>
-                <div class="g-card rounded-xl p-4 flex items-center gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-google-red"></i>
-                    <span class="font-semibold text-sm">Basic Video & Graphic Design</span>
+
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-gRed/10 flex items-center justify-center text-gRed mb-4">
+                            <i data-lucide="edit-3" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gTextPrimary mb-2">Content & Email</h3>
+                        <p class="text-xs text-gTextSecondary leading-relaxed">Writing informative blogs, creating email newsletters, and designing basic media content.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section with WhatsApp Integration -->
-        <section id="contact" class="space-y-6 pt-6">
-            <div class="g-card rounded-3xl p-8 sm:p-12 border border-google-border bg-gradient-to-b from-white to-google-gray">
-                <div class="max-w-2xl mx-auto text-center space-y-4 mb-8">
-                    <span class="text-xs font-bold uppercase tracking-wider text-google-blue">Let's Connect</span>
-                    <h2 class="text-3xl font-bold tracking-tight text-google-darkText">Start a Project or Consultation</h2>
-                    <p class="text-sm text-google-subText">
-                        Fill in the details below and click send to connect with me directly on WhatsApp!
-                    </p>
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <div class="g-card p-8 sm:p-12">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gBlue">Get In Touch</span>
+                    <h2 class="text-3xl font-extrabold text-gTextPrimary mt-1">Connect with Himanshu</h2>
+                    <p class="text-xs text-gTextSecondary mt-2">Have a question or want to discuss a digital marketing initiative? Send a message below.</p>
                 </div>
 
-                <!-- Contact Form -->
-                <form id="whatsappForm" onsubmit="sendToWhatsApp(event)" class="max-w-xl mx-auto space-y-4">
-                    <div class="grid sm:grid-cols-2 gap-4">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-bold text-google-darkText mb-1.5">Your Name *</label>
-                            <input type="text" id="senderName" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl border border-google-border focus:ring-2 focus:ring-google-blue focus:outline-none text-sm">
+                            <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Your Name *</label>
+                            <input type="text" required placeholder="Enter your full name" 
+                                   class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-google-darkText mb-1.5">Your Email *</label>
-                            <input type="email" id="senderEmail" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-xl border border-google-border focus:ring-2 focus:ring-google-blue focus:outline-none text-sm">
+                            <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Your Email *</label>
+                            <input type="email" required placeholder="name@company.com" 
+                                   class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-google-darkText mb-1.5">Service Needed *</label>
-                        <select id="senderService" required class="w-full px-4 py-2.5 rounded-xl border border-google-border focus:ring-2 focus:ring-google-blue focus:outline-none text-sm bg-white">
-                            <option value="Complete Digital Marketing">Complete Digital Marketing</option>
-                            <option value="SEO (On-Page, Off-Page, Technical)">SEO & Organic Growth</option>
-                            <option value="Website Designing">Website Designing</option>
-                            <option value="Social Media Marketing">Social Media Marketing</option>
-                            <option value="Email Marketing">Email Marketing</option>
-                        </select>
+                        <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Subject</label>
+                        <input type="text" placeholder="Project Inquiry / SEO Audit" 
+                               class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-google-darkText mb-1.5">Your Message *</label>
-                        <textarea id="senderMessage" required rows="4" placeholder="Tell me about your business goals..." class="w-full px-4 py-2.5 rounded-xl border border-google-border focus:ring-2 focus:ring-google-blue focus:outline-none text-sm"></textarea>
+                        <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Message *</label>
+                        <textarea rows="4" required placeholder="Write your message here..." 
+                                  class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all resize-none"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-3.5 rounded-xl bg-google-green hover:bg-green-600 text-white font-bold text-sm shadow transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        <span>Send Details to WhatsApp</span>
+                    <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gBlue hover:bg-gBlueHover text-white text-xs font-bold uppercase tracking-wider transition-all shadow-g-md flex items-center justify-center gap-2">
+                        <span>Send Message</span>
+                        <i data-lucide="send" class="w-4 h-4"></i>
                     </button>
                 </form>
+
+                <div id="contact-toast" class="hidden mt-6 p-4 rounded-xl bg-gGreen/10 border border-gGreen/30 text-gGreen text-xs text-center font-semibold">
+                    Thank you! Your message has been sent successfully to Himanshu.
+                </div>
             </div>
         </section>
-
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-google-border bg-white py-8">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-google-subText">
-            <p>© 2026 Himanshu Singh Rawat. All rights reserved.</p>
-            <p>Digital Marketing Mastery — Udified Skill</p>
+    <footer class="border-t border-gBorder py-10 bg-gSubtleBg text-xs text-gTextSecondary">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2 font-medium">
+                <span class="font-bold text-gTextPrimary">Himanshu Singh Rawat</span>
+                <span>• Digital Marketer & Growth Strategist</span>
+            </div>
+            <div>© <span id="year"></span> Udified Skill Certified. All rights reserved.</div>
         </div>
     </footer>
 
-    <!-- JavaScript to handle WhatsApp messaging -->
+    <!-- Interactive Scripts -->
     <script>
         lucide.createIcons();
 
-        function sendToWhatsApp(event) {
-            event.preventDefault();
+        // Mobile Menu Drawer Toggle
+        document.getElementById('mobile-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-drawer').classList.toggle('hidden');
+        });
 
-            // Phone number updated
-            const myPhoneNumber = "917217712125"; 
+        document.querySelectorAll('.mobile-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-drawer').classList.add('hidden');
+            });
+        });
 
-            const name = document.getElementById("senderName").value;
-            const email = document.getElementById("senderEmail").value;
-            const service = document.getElementById("senderService").value;
-            const message = document.getElementById("senderMessage").value;
+        // Form Submission Simulation
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.innerHTML = `<span>Sending...</span>`;
+            setTimeout(() => {
+                btn.innerHTML = `<span>Send Message</span><i data-lucide="send" class="w-4 h-4"></i>`;
+                lucide.createIcons();
+                document.getElementById('contact-toast').classList.remove('hidden');
+                e.target.reset();
+            }, 700);
+        });
 
-            // Formatted WhatsApp Text
-            const text = `Hi Himanshu! 🚀%0A*New Inquiry from Portfolio*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Service:* ${encodeURIComponent(service)}%0A*Message:* ${encodeURIComponent(message)}`;
-
-            // Open WhatsApp Web/App
-            const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${text}`;
-            window.open(whatsappUrl, '_blank');
-        }
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
