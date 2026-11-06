@@ -216,7 +216,7 @@
                         <span class="text-xs font-bold uppercase tracking-widest text-gBlue">Background & Training</span>
                         <h2 class="text-2xl sm:text-3xl font-extrabold text-gTextPrimary mt-1">Certified Digital Marketing Practitioner</h2>
                         <p class="text-xs sm:text-sm text-gTextSecondary leading-relaxed mt-4">
-                            Trained in **Digital Marketing Mastery** at **Udified Skill (2026)**, Himanshu brings a hands-on technical approach to modern online marketing. From crafting responsive websites to executing end-to-end SEO audits, managing corporate social channels, and publishing high-intent blog content, he focuses on clear organic reach and brand growth.
+                            Trained in <strong>Digital Marketing Mastery</strong> at <strong>Udified Skill (2026)</strong>, Himanshu brings a hands-on technical approach to modern online marketing. From crafting responsive websites to executing end-to-end SEO audits, managing corporate social channels, and publishing high-intent blog content, he focuses on clear organic reach and brand growth.
                         </p>
                     </div>
 
@@ -436,32 +436,38 @@
                 </div>
 
                 <form id="contact-form" class="space-y-6">
+                    <!-- Web3Forms config: messages are delivered to himanshusinghrawat48@gmail.com -->
+                    <input type="hidden" name="access_key" value="87ae0f6a-0027-4910-8d86-372fcc4facb8">
+                    <input type="hidden" name="from_name" value="Portfolio Website Contact Form">
+                    <!-- Spam protection (honeypot): real visitors never see or fill this -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
+
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Your Name *</label>
-                            <input type="text" required placeholder="Enter your full name" 
+                            <input type="text" name="name" required placeholder="Enter your full name" 
                                    class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Your Email *</label>
-                            <input type="email" required placeholder="name@company.com" 
+                            <input type="email" name="email" required placeholder="name@company.com" 
                                    class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Subject</label>
-                        <input type="text" placeholder="Project Inquiry / SEO Audit" 
+                        <input type="text" name="subject" placeholder="Project Inquiry / SEO Audit" 
                                class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Message *</label>
-                        <textarea rows="4" required placeholder="Write your message here..." 
+                        <textarea name="message" rows="4" required placeholder="Write your message here..." 
                                   class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all resize-none"></textarea>
                     </div>
 
-                    <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gBlue hover:bg-gBlueHover text-white text-xs font-bold uppercase tracking-wider transition-all shadow-g-md flex items-center justify-center gap-2">
+                    <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gBlue hover:bg-gBlueHover text-white text-xs font-bold uppercase tracking-wider transition-all shadow-g-md flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
                         <span>Send Message</span>
                         <i data-lucide="send" class="w-4 h-4"></i>
                     </button>
@@ -469,6 +475,9 @@
 
                 <div id="contact-toast" class="hidden mt-6 p-4 rounded-xl bg-gGreen/10 border border-gGreen/30 text-gGreen text-xs text-center font-semibold">
                     Thank you! Your message has been sent successfully to Himanshu.
+                </div>
+                <div id="contact-error" class="hidden mt-6 p-4 rounded-xl bg-gRed/10 border border-gRed/30 text-gRed text-xs text-center font-semibold">
+                    Something went wrong. Please try again or email himanshusinghrawat48@gmail.com directly.
                 </div>
             </div>
         </section>
@@ -500,17 +509,42 @@
             });
         });
 
-        // Form Submission Simulation
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
+        // Contact form -> Web3Forms (delivers the message to Himanshu's email)
+        const form = document.getElementById('contact-form');
+        const btn = document.getElementById('submit-btn');
+        const toast = document.getElementById('contact-toast');
+        const errorBox = document.getElementById('contact-error');
+        const btnDefault = `<span>Send Message</span><i data-lucide="send" class="w-4 h-4"></i>`;
+
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const btn = document.getElementById('submit-btn');
+            toast.classList.add('hidden');
+            errorBox.classList.add('hidden');
+
+            btn.disabled = true;
             btn.innerHTML = `<span>Sending...</span>`;
-            setTimeout(() => {
-                btn.innerHTML = `<span>Send Message</span><i data-lucide="send" class="w-4 h-4"></i>`;
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(Object.fromEntries(new FormData(form)))
+                });
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    toast.classList.remove('hidden');
+                    form.reset();
+                } else {
+                    errorBox.classList.remove('hidden');
+                }
+            } catch (err) {
+                errorBox.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = btnDefault;
                 lucide.createIcons();
-                document.getElementById('contact-toast').classList.remove('hidden');
-                e.target.reset();
-            }, 700);
+            }
         });
 
         document.getElementById('year').textContent = new Date().getFullYear();
