@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himanshu Singh Rawat | Digital Marketer & Growth Strategist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gBlue: '#1A73E8',
+                        gBlueHover: '#1557B0',
+                        gRed: '#EA4335',
+                        gYellow: '#FBBC04',
+                        gGreen: '#34A853',
+                        gBg: '#FFFFFF',
+                        gSubtleBg: '#F8F9FA',
+                        gBorder: '#DADCE0',
+                        gTextPrimary: '#202124',
+                        gTextSecondary: '#5F6368',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'g-sm': '0 1px 3px rgba(60,64,67,0.12), 0 1px 2px rgba(60,64,67,0.08)',
+                        'g-md': '0 1px 6px rgba(32,33,36,0.1), 0 4px 16px rgba(32,33,36,0.08)',
+                        'g-lg': '0 4px 20px rgba(32,33,36,0.12), 0 8px 30px rgba(32,33,36,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background-color: #FFFFFF;
+            color: #202124;
+            overflow-x: hidden;
+        }
+
+        .g-card {
+            background-color: #FFFFFF;
+            border: 1px solid #DADCE0;
+            border-radius: 20px;
+            box-shadow: 0 1px 3px rgba(60,64,67,0.08), 0 1px 2px rgba(60,64,67,0.05);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .g-card:hover {
+            box-shadow: 0 4px 18px rgba(32,33,36,0.12), 0 2px 6px rgba(32,33,36,0.06);
+            border-color: #BEC1C5;
+            transform: translateY(-2px);
+        }
+
+        .g-pill {
+            background-color: #F8F9FA;
+            border: 1px solid #DADCE0;
+            transition: all 0.2s ease;
+        }
+        .g-pill:hover {
+            background-color: #F1F3F4;
+            border-color: #BDC1C6;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFFFFF;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DADCE0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #BDC1C6;
+        }
+
+        #bg-dots {
+            background-image: radial-gradient(#E8EAED 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="relative antialiased selection:bg-gBlue/20 selection:text-gBlue">
+
+    <!-- Subtle Background Pattern -->
+    <div id="bg-dots" class="fixed inset-0 pointer-events-none z-0 opacity-60"></div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Google Styled Logo Signature -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="flex items-center gap-0.5 font-extrabold text-2xl tracking-tight">
+                    <span class="text-gBlue">H</span>
+                    <span class="text-gRed">i</span>
+                    <span class="text-gYellow">m</span>
+                    <span class="text-gBlue">a</span>
+                    <span class="text-gGreen">n</span>
+                    <span class="text-gRed">s</span>
+                    <span class="text-gBlue">h</span>
+                    <span class="text-gGreen">u</span>
+                </div>
+                <div class="hidden sm:flex items-center gap-1.5 pl-2.5 border-l border-gBorder text-xs font-semibold text-gTextSecondary">
+                    <span>Digital Marketer</span>
+                    <span class="flex gap-1 ml-1">
+                        <span class="w-2 h-2 rounded-full bg-gBlue"></span>
+                        <span class="w-2 h-2 rounded-full bg-gRed"></span>
+                        <span class="w-2 h-2 rounded-full bg-gYellow"></span>
+                        <span class="w-2 h-2 rounded-full bg-gGreen"></span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-1 bg-gSubtleBg border border-gBorder rounded-full p-1.5 shadow-inner">
+                <a href="#about" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">About</a>
+                <a href="#skills" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextSecondary hover:text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">Skills</a>
+                <a href="#experience" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextSecondary hover:text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">Experience</a>
+                <a href="#services" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextSecondary hover:text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">Services</a>
+                <a href="#contact" class="px-4 py-1.5 rounded-full text-xs font-semibold text-gTextSecondary hover:text-gTextPrimary hover:bg-white hover:shadow-sm transition-all">Contact</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-gBlue hover:bg-gBlueHover text-white text-xs font-bold transition-all shadow-g-sm hover:shadow-g-md flex items-center gap-2">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Let's Connect</span>
+                </a>
+                
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-full bg-gSubtleBg text-gTextPrimary border border-gBorder">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-gBorder px-6 py-4 flex flex-col gap-3">
+            <a href="#about" class="mobile-item py-2 text-sm font-medium text-gTextPrimary">About</a>
+            <a href="#skills" class="mobile-item py-2 text-sm font-medium text-gTextPrimary">Skills & Tech</a>
+            <a href="#experience" class="mobile-item py-2 text-sm font-medium text-gTextPrimary">Work Experience</a>
+            <a href="#services" class="mobile-item py-2 text-sm font-medium text-gTextPrimary">Services Offered</a>
+            <a href="#contact" class="mobile-item py-2 text-sm font-bold text-gBlue">Get In Touch</a>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+
+        <!-- Hero Section -->
+        <section id="about" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+            
+            <!-- Udified Skill Certification Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full g-pill text-xs font-medium text-gTextSecondary mb-8 shadow-sm">
+                <i data-lucide="award" class="w-4 h-4 text-gBlue"></i>
+                <span class="font-semibold text-gTextPrimary">Udified Skill Certified (Digital Marketing Mastery, 2026)</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-gTextPrimary tracking-tight leading-[1.15]">
+                Himanshu Singh Rawat
+            </h1>
+            <p class="mt-4 text-lg sm:text-2xl text-gTextSecondary font-normal max-w-3xl mx-auto">
+                Digital Marketer & Growth Specialist driving organic traffic, web experiences, and multi-channel marketing strategies.
+            </p>
+
+            <!-- Google Search Bar Mockup -->
+            <div class="mt-10 max-w-2xl mx-auto relative">
+                <div class="bg-white border border-gBorder rounded-full p-2.5 pl-6 flex items-center gap-3 shadow-g-md hover:shadow-g-lg transition-all">
+                    <i data-lucide="search" class="w-5 h-5 text-gBlue"></i>
+                    <span class="w-full text-left text-gTextPrimary text-sm font-medium truncate">
+                        Himanshu Singh Rawat — Website Design, Full-Stack SEO, Social Media & Email Strategy
+                    </span>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-gBlue text-white font-semibold text-xs transition-all flex items-center gap-1.5 flex-shrink-0">
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Core Skill Badges -->
+            <div class="flex flex-wrap justify-center gap-2.5 mt-10 max-w-3xl mx-auto">
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="globe" class="w-3.5 h-3.5 text-gBlue"></i> Website Designing
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="search" class="w-3.5 h-3.5 text-gGreen"></i> Full-Stack SEO (On/Off Page, Local, Tech)
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="share-2" class="w-3.5 h-3.5 text-gRed"></i> Multi-Channel Social Marketing
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-gYellow"></i> Email Marketing
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextPrimary flex items-center gap-1.5">
+                    <i data-lucide="edit-3" class="w-3.5 h-3.5 text-gBlue"></i> Blog Writing & Copywriting
+                </span>
+            </div>
+        </section>
+
+        <!-- Certification & Overview Section -->
+        <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="g-card p-8 sm:p-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gBlue">Background & Training</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-gTextPrimary mt-1">Certified Digital Marketing Practitioner</h2>
+                        <p class="text-xs sm:text-sm text-gTextSecondary leading-relaxed mt-4">
+                            Trained in **Digital Marketing Mastery** at **Udified Skill (2026)**, Himanshu brings a hands-on technical approach to modern online marketing. From crafting responsive websites to executing end-to-end SEO audits, managing corporate social channels, and publishing high-intent blog content, he focuses on clear organic reach and brand growth.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 bg-gSubtleBg border border-gBorder rounded-2xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-gBlue/10 flex items-center justify-center text-gBlue">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-gTextPrimary">Udified Skill</div>
+                                <div class="text-[11px] text-gTextSecondary">Digital Marketing Mastery (2026)</div>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-xs text-gTextSecondary">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-gGreen"></i> Website Development & Design</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-gGreen"></i> Technical & Local SEO Optimization</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-gGreen"></i> Social Media & Content Strategy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-gGreen">Work History</span>
+                <h2 class="text-3xl font-extrabold text-gTextPrimary mt-1">Professional Experience</h2>
+            </div>
+
+            <div class="g-card p-8 sm:p-12 relative overflow-hidden">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-gBorder">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-gGreen"></span>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-gTextPrimary">Fostechno Process & Engineering Private Limited</h3>
+                        </div>
+                        <p class="text-xs font-semibold text-gBlue mt-1">Digital Marketing Specialist / Growth Executive</p>
+                    </div>
+                    <span class="px-3.5 py-1.5 rounded-full bg-gSubtleBg border border-gBorder text-xs font-semibold text-gTextSecondary">
+                        2026 — Present
+                    </span>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-gTextSecondary">Core Responsibilities & Highlights</h4>
+                        <ul class="space-y-3 text-xs text-gTextSecondary">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gBlue flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Website Designing:</strong> Structured, designed, and updated responsive web pages tailored for seamless user navigation.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gGreen flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">360° SEO Execution:</strong> Managed Technical SEO, On-Page keyword placement, Off-Page backlink strategy, and Google Local SEO listing optimization.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gYellow flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Social Media Management:</strong> Maintained and scaled social brand presence across LinkedIn, Instagram, Facebook, and Twitter (X).</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-gTextSecondary">Marketing & Content Operations</h4>
+                        <ul class="space-y-3 text-xs text-gTextSecondary">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gRed flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Email Marketing:</strong> Designed and broadcasted targeted email communication campaigns to improve engagement.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gBlue flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Blog Writing:</strong> Authored informative blogs to strengthen domain authority and target audience reach.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-gGreen flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-gTextPrimary">Creatives Production:</strong> Handled basic video editing and graphic designing to produce engaging banners and social posts.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Skills & Expertise Section -->
+        <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-gBlue">Skills Matrix</span>
+                <h2 class="text-3xl font-extrabold text-gTextPrimary mt-1">Core Competencies</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="g-card p-6">
+                    <div class="w-10 h-10 rounded-2xl bg-gGreen/10 flex items-center justify-center text-gGreen mb-4">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Search Engine Optimization (SEO)</h3>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Technical SEO</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">On-Page SEO</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Off-Page SEO</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Local SEO</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="g-card p-6">
+                    <div class="w-10 h-10 rounded-2xl bg-gBlue/10 flex items-center justify-center text-gBlue mb-4">
+                        <i data-lucide="share-2" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Social Media Management</h3>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">LinkedIn</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Instagram</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Facebook</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Twitter (X)</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="g-card p-6">
+                    <div class="w-10 h-10 rounded-2xl bg-gYellow/10 flex items-center justify-center text-gYellow mb-4">
+                        <i data-lucide="layout" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Website & Graphics Design</h3>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Website Designing</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Graphic Designing</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Video Editing</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="g-card p-6">
+                    <div class="w-10 h-10 rounded-2xl bg-gRed/10 flex items-center justify-center text-gRed mb-4">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Email Marketing & Copy</h3>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Email Campaigns</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">Blog Writing</span>
+                        <span class="px-2.5 py-1 rounded-md bg-gSubtleBg border border-gBorder text-[11px] text-gTextSecondary font-medium">SEO Content</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div class="g-card p-6 md:col-span-2 lg:col-span-2">
+                    <div class="w-10 h-10 rounded-2xl bg-gBlue/10 flex items-center justify-center text-gBlue mb-4">
+                        <i data-lucide="check-square" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gTextPrimary mb-2">Technical Workflow</h3>
+                    <p class="text-xs text-gTextSecondary leading-relaxed">
+                        Combines technical SEO audits with user-friendly web page layouts, strategic social broadcasting, and email outreach to deliver consistent digital growth.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Offered Section -->
+        <section id="services" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-gRed">What I Do</span>
+                <h2 class="text-3xl font-extrabold text-gTextPrimary mt-1">Services & Solutions</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-gGreen/10 flex items-center justify-center text-gGreen mb-4">
+                            <i data-lucide="trending-up" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gTextPrimary mb-2">Complete SEO Solutions</h3>
+                        <p class="text-xs text-gTextSecondary leading-relaxed">On-page optimization, technical site audits, Google Local SEO, and quality link building.</p>
+                    </div>
+                </div>
+
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-gBlue/10 flex items-center justify-center text-gBlue mb-4">
+                            <i data-lucide="monitor" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gTextPrimary mb-2">Website Designing</h3>
+                        <p class="text-xs text-gTextSecondary leading-relaxed">Creating clean, structured, and user-friendly websites aligned with search engine standards.</p>
+                    </div>
+                </div>
+
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-gYellow/10 flex items-center justify-center text-gYellow mb-4">
+                            <i data-lucide="share-2" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gTextPrimary mb-2">Social Media Strategy</h3>
+                        <p class="text-xs text-gTextSecondary leading-relaxed">Managing organic presence on LinkedIn, Instagram, Facebook, and Twitter with engaging assets.</p>
+                    </div>
+                </div>
+
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-gRed/10 flex items-center justify-center text-gRed mb-4">
+                            <i data-lucide="edit-3" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gTextPrimary mb-2">Content & Email</h3>
+                        <p class="text-xs text-gTextSecondary leading-relaxed">Writing informative blogs, creating email newsletters, and designing basic media content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <div class="g-card p-8 sm:p-12">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gBlue">Get In Touch</span>
+                    <h2 class="text-3xl font-extrabold text-gTextPrimary mt-1">Connect with Himanshu</h2>
+                    <p class="text-xs text-gTextSecondary mt-2">Have a question or want to discuss a digital marketing initiative? Send a message below.</p>
+                </div>
+
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Your Name *</label>
+                            <input type="text" required placeholder="Enter your full name" 
+                                   class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Your Email *</label>
+                            <input type="email" required placeholder="name@company.com" 
+                                   class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Subject</label>
+                        <input type="text" placeholder="Project Inquiry / SEO Audit" 
+                               class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gTextSecondary uppercase tracking-wider mb-2">Message *</label>
+                        <textarea rows="4" required placeholder="Write your message here..." 
+                                  class="w-full px-4 py-3 rounded-xl bg-gSubtleBg border border-gBorder text-gTextPrimary placeholder-gTextSecondary text-xs focus:outline-none focus:border-gBlue focus:bg-white transition-all resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gBlue hover:bg-gBlueHover text-white text-xs font-bold uppercase tracking-wider transition-all shadow-g-md flex items-center justify-center gap-2">
+                        <span>Send Message</span>
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+
+                <div id="contact-toast" class="hidden mt-6 p-4 rounded-xl bg-gGreen/10 border border-gGreen/30 text-gGreen text-xs text-center font-semibold">
+                    Thank you! Your message has been sent successfully to Himanshu.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gBorder py-10 bg-gSubtleBg text-xs text-gTextSecondary">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2 font-medium">
+                <span class="font-bold text-gTextPrimary">Himanshu Singh Rawat</span>
+                <span>• Digital Marketer & Growth Strategist</span>
+            </div>
+            <div>© <span id="year"></span> Udified Skill Certified. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Drawer Toggle
+        document.getElementById('mobile-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-drawer').classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-drawer').classList.add('hidden');
+            });
+        });
+
+        // Form Submission Simulation
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.innerHTML = `<span>Sending...</span>`;
+            setTimeout(() => {
+                btn.innerHTML = `<span>Send Message</span><i data-lucide="send" class="w-4 h-4"></i>`;
+                lucide.createIcons();
+                document.getElementById('contact-toast').classList.remove('hidden');
+                e.target.reset();
+            }, 700);
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
